@@ -4,7 +4,7 @@ Knock*Knock
 -----------
 Knock Knock is an Arduino-powered, acoustic impulse sequence detector.  That's a fancy way of saying that it's a little embedded project which listens and responds to sequences of sharp sounds, like claps.  
 
-The software is developed for an Arduino Uno with [Wiring](http://wiring.org.co/).  It assumes additional hardware:  a microphone, current driver, and solenoid.  For a complete description of the software and hardware, see my [Knock*Knock Webpage](http://robertyu.com/wikiperdido/Knock%20Knock).
+The software is developed for an Arduino Uno with [Wiring](http://wiring.org.co/).  It requires additional hardware:  a microphone, current driver, and solenoid.  For a complete description of the software and hardware, see my [Knock*Knock Webpage](http://robertyu.com/wikiperdido/Knock%20Knock).
 
 ![Knock Knock](http://robertyu.com/wikiperdido/Knock%20Knock?action=AttachFile&do=get&target=small_open_box.jpg "KnockKnock Open Box")
 
