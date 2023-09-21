@@ -6,7 +6,7 @@ Knock Knock is a little embedded project which listens for a sequence of claps o
 
 The guts of Knock Knock consists of an Arduino Uno, a microphone preamp board from Sparkfun, a Sparkfun "protoshield," and a power supply.
 
-![Knock Knock](/Users/ryu/Documents/p2023/knockknock/readme_images/small_arduino_uno_unpacked.jpg "KnockKnock Open Box")
+![Knock Knock](./readme_images/small_arduino_uno_unpacked.jpg "KnockKnock Open Box")
 
 ### The Ins
 
@@ -37,13 +37,13 @@ The "knocks" are provided by a solenoid. I played around with a solenoid from a 
 
 Here's my solenoid schematic:
 
-![](/Users/ryu/Documents/p2023/knockknock/readme_images/small_solenoid_driver.jpg)
+![](./readme_images/small_solenoid_driver.jpg)
 
 What's with the diode in parallel with the solenoid? A solenoid is basically an inductor. When you suddenly cut the current to an inductor, the inductor's collapsing magnetic field draws additional current from whatever is connected. The diode is a [flyback diode](http://en.wikipedia.org/wiki/Flyback_diode), which protects the rest of the circuit from the resulting voltage spike.
 
 Note: I never got around to modulating the clacks.
 
-![](/Users/ryu/Documents/p2023/knockknock/readme_images/small_arduino_wiring.jpg)
+![](./readme_images/small_arduino_wiring.jpg)
 
 ### The Firmware ISR
 
@@ -65,7 +65,7 @@ When the timeout\_flag is set, the sequencer tries to match the contents of the 
 
 Finally, if the handle\_output flag was set by the ISR, then the software updates its output state machine.The state machine reads commands from an output queue, e.g. RAMP\_SOLENOID or WAIT. It performs the command, then processes the next command or goes quiet if the queue is empty.
 
-![](/Users/ryu/Documents/p2023/knockknock/readme_images/knock_dfd.png)
+![](./readme_images/knock_dfd.png)
 
 ### Installation and Building
 
@@ -86,11 +86,11 @@ On my system, the Arduino directory looks like this:
 
 After getting the whole thing working on a breadboard, I soldered everything onto a protoboard, added a few panel LEDs, and shoved the whole thing into a cigar box. I freely admit that the wiring looks like I did it while drunk and wearing boxing gloves. I even used hot-pink duct tape for added effect.
 
-![](/Users/ryu/Documents/p2023/knockknock/readme_images/small_open_box.jpg)
+![](./readme_images/small_open_box.jpg)
 
 
 
-![](/Users/ryu/Documents/p2023/knockknock/readme_images/small_closed_box.jpg)
+![](./readme_images/small_closed_box.jpg)
 
 
 
