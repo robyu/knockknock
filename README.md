@@ -55,8 +55,6 @@ The Arduino environment has a nice library ([Timer1]([Arduino Playground - Timer
 4. Every interrupt, the ISR updates the PWM output pins, which are hooked up to an LED (input confirmation, or IACK) and the solenoid. Using the PWM output with the LEDs let me fade the lights smoothly. 
 5. Finally, the ISR processes the microphone input. Processing the microphone involves reading the digitized value off the input pin, applying an IIR high-pass filter (to remove DC), then adding the absolute value of the filtered value to an accumulator. The ISR runs every 500 usec, so the microphone sample rate is 2KHz. 
 
-
-
 ### Main Loop
 
 Outside the ISR, the main loop checks if the handle\_input flag was set by the ISR. If so, then the software applies heuristics to check the microphone sample accumulator (a simple threshold) or button (debounced) for an input event; if an event occurred, then the software adds the event to an input queue. If no event has occurred for a longish time--say one second--then it sets the timeout\_flag. 
@@ -80,25 +78,17 @@ On my system, the Arduino directory looks like this:
         /libraries
             /TimerOne
 
-
-
 ### Putting It All Together
 
 After getting the whole thing working on a breadboard, I soldered everything onto a protoboard, added a few panel LEDs, and shoved the whole thing into a cigar box. I freely admit that the wiring looks like I did it while drunk and wearing boxing gloves. I even used hot-pink duct tape for added effect.
 
 ![](./readme_images/small_open_box.jpg)
 
-
-
 ![](./readme_images/small_closed_box.jpg)
-
-
 
 If you've read this far, you may as well check out the video:
 
 [knock knock - YouTube](https://www.youtube.com/watch?v=kqF6x-jQpuQ)
-
-
 
 License
 =======
